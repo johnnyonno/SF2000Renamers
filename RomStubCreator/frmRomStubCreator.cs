@@ -56,7 +56,7 @@ namespace RomStubCreator
                 return;
             }
 
-            if (string.IsNullOrEmpty(tag))
+            if (string.IsNullOrEmpty(overrideExtension))
             {
                 MessageBox.Show("You need to select an Override Extension");
                 return;

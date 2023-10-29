@@ -36,6 +36,7 @@ namespace ThumbnailRenamer
             string source = txtSourceFolder.Text;
             string destionation = txtDestinationFolder.Text;
             string tag = txtTag.Text;
+            string overrideExtension = txtOverride.Text;
 
             if (string.IsNullOrEmpty(source))
             {
@@ -55,6 +56,12 @@ namespace ThumbnailRenamer
                 return;
             }
 
+            if (string.IsNullOrEmpty(overrideExtension))
+            {
+                MessageBox.Show("You need to select an Override Extension");
+                return;
+            }
+
             string[] files = Directory.GetFiles(source);
 
             pgBar.Minimum = 0;
@@ -70,11 +77,11 @@ namespace ThumbnailRenamer
 
                 if (rbPrefix.Checked)
                 {
-                    finalName = string.Format("{0};{1}.{2}", tag, name, extension);         
+                    finalName = string.Format("{0};{1}.{2}.{3}", tag, name, overrideExtension, extension);
                 }
                 else
                 {
-                    finalName = string.Format("{0};{1}.{2}", name, tag, extension);
+                    finalName = string.Format("{0};{1}.{2}.{3}", name, tag, overrideExtension, extension);
                 }
 
                 string finalPath = System.IO.Path.Combine(destionation, finalName);

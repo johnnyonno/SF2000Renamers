@@ -41,6 +41,8 @@
             pgBar = new ProgressBar();
             btnAction = new Button();
             optgrpbox = new GroupBox();
+            txtOverride = new TextBox();
+            lblOverride = new Label();
             optgrpbox.SuspendLayout();
             SuspendLayout();
             // 
@@ -123,7 +125,7 @@
             // lblTag
             // 
             lblTag.AutoSize = true;
-            lblTag.Location = new Point(298, 115);
+            lblTag.Location = new Point(224, 114);
             lblTag.Name = "lblTag";
             lblTag.Size = new Size(66, 15);
             lblTag.TabIndex = 8;
@@ -131,7 +133,7 @@
             // 
             // txtTag
             // 
-            txtTag.Location = new Point(370, 110);
+            txtTag.Location = new Point(296, 109);
             txtTag.Name = "txtTag";
             txtTag.Size = new Size(100, 23);
             txtTag.TabIndex = 9;
@@ -164,11 +166,30 @@
             optgrpbox.TabStop = false;
             optgrpbox.Text = "Tag Location";
             // 
+            // txtOverride
+            // 
+            txtOverride.Location = new Point(510, 107);
+            txtOverride.Name = "txtOverride";
+            txtOverride.Size = new Size(100, 23);
+            txtOverride.TabIndex = 27;
+            txtOverride.Text = "gba";
+            // 
+            // lblOverride
+            // 
+            lblOverride.AutoSize = true;
+            lblOverride.Location = new Point(402, 112);
+            lblOverride.Name = "lblOverride";
+            lblOverride.Size = new Size(106, 15);
+            lblOverride.TabIndex = 26;
+            lblOverride.Text = "Override Extension";
+            // 
             // frmThumbnailRenamer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(634, 222);
+            Controls.Add(txtOverride);
+            Controls.Add(lblOverride);
             Controls.Add(optgrpbox);
             Controls.Add(btnAction);
             Controls.Add(pgBar);
@@ -204,5 +225,7 @@
         private ProgressBar pgBar;
         private Button btnAction;
         private GroupBox optgrpbox;
+        private TextBox txtOverride;
+        private Label lblOverride;
     }
 }
